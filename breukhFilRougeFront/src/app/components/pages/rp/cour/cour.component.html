@@ -1,0 +1,110 @@
+<div class="my-8 flex justify-center items-center">
+    <div class="bg-blue-100 w-[80%] h-full p-2">
+
+        <form [formGroup]="myFormCour">
+            <div class="space-y-12">
+                <div class="border-b border-gray-900/10 pb-12">
+                    <h2 class="text-lg font-semibold leading-7 text-center text-gray-900">PLANNIFICATION COURS
+                    </h2>
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name" class="block text-lg font-bold leading-6 text-gray-900">Année
+                                Scolaire</label>
+                            <div class="mt-2">
+                                <select formControlName="annee" name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="">Choisir l'année</option>
+                                    <option *ngFor="let annee of tabannees" [value]="annee.id">{{annee.libelle}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Semestre</label>
+                            <div class="mt-2">
+                                <select formControlName="semestre" name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="">Choisir le semestre</option>
+                                    <option *ngFor="let seme of tabsemestre" [value]="seme.id">{{seme.libelle}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Module</label>
+                            <div class="mt-2">
+                                <select formControlName="module" name="" (change)="getProf()"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="">Choisir un module</option>
+                                    <option *ngFor="let mod of tabmodule" [value]="mod.id">{{mod.libelle}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Professeur</label>
+                            <div class="mt-2">
+                                <select formControlName="prof" name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="" disabled>Choisir un professeur</option>
+                                    <option *ngFor="let prof of tabprof" [value]="prof.id">{{prof.prenom+' '+prof.nom}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3 grid-container" formArrayName="classe">
+                            <div class="sm:col-span-3 grid-container"
+                                *ngFor="let classee of classe.controls; let i = index" [formGroupName]="i">
+                                <div class="breukh1 sm:col-span-3 grid-item">
+                                    <label for="country"
+                                        class="block text-lg font-bold leading-6 text-gray-900">Classe</label>
+                                    <div class="mt-2">
+                                        <select formControlName="class" autocomplete="country-name"
+                                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                            <option>Choisir</option>
+                                            <option *ngFor="let class of tabclass" [value]="class.id">
+                                                {{class.classe_ouverte_id.libelle}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="breukh2 sm:col-span-3  mt-2 grid-item">
+                                    <div class="sm:col-span-3">
+                                        <label for="country"
+                                            class="block text-lg font-bold leading-6 text-gray-900">Nombre
+                                            d'heures</label>
+                                        <div class="mt-2">
+                                            <input type="number" formControlName="heure"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class=" text-lg font-bold bg-blue-300 border h-10 mt-3" (click)="addClassee()">Ajout
+                            classe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900"
+                    [routerLink]="['/page/rp/listecour']">Cancel</button>
+                <button type="submit" (click)="Onsubmit()" [routerLink]="['/page/rp/listecour']"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            </div>
+        </form>
+
+
+    </div>
+    <div>

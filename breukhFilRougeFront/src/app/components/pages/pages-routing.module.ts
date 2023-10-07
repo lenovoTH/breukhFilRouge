@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-
 const routes: Routes = [
-  { path: 'home', component: HomeComponent }
+  { path: 'rp', loadChildren: () => import('./rp/rp.module').then(m => m.RpModule) },
+  { path: 'attache', loadChildren: () => import('./attache/attache.module').then(m => m.AttacheModule) },
 ];
 
 @NgModule({

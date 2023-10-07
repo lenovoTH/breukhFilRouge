@@ -1,7 +1,11 @@
 <?php
 
+use App\Models\Classe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CourController;
+use App\Http\Controllers\ClasseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
 });
+
+Route::apiResource('users', UserController::class);
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('logout', [AuthController::class, 'logout']);
+
+Route::get('classes', [ClasseController::class, 'index']);
+Route::get('profs/{idModule}', [ClasseController::class, 'showProf']);
+Route::get('modules', [ClasseController::class, 'indexModule']);
+Route::get('annees', [ClasseController::class, 'indexAnnee']);
+Route::get('semestres', [ClasseController::class, 'indexSemestre']);
+Route::post('cours', [CourController::class, 'store']);
+Route::get('cours', [CourController::class, 'index']);
+Route::get('filtre', [CourController::class, 'filtre']);
+

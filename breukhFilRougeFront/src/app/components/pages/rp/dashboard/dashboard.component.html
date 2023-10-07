@@ -1,0 +1,483 @@
+<!-- <p>dashboard works!</p> -->
+
+<div class="h-full my-8 flex justify-center align-center">
+    <div class="bg-blue-100 w-[90%] h-full p-2 flex">
+        <div class="bg-blue-400 rounded-lg w-[20%] h-auto">
+            <div class="">
+                <ul class="text-lg font-bold">
+                    <li class="text-center text-white"><i
+                            class="fa-solid fa-house mx-2 my-16 text-orange-400"></i>DASHBOARD</li>
+                    <li [routerLink]="['/page/rp/listecour']" class="text-center my-12 text-white"><i
+                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Plannification Cour</li>
+                    <li [routerLink]="['/page/rp/session']" class="text-center my-12 text-white"><i
+                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Plannification Session</li>
+
+                    <li class="text-center my-12 text-white"><i class="fa-solid fa-house mx-2 text-orange-400"></i>Liste
+                        des
+                        etudiants</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- <div class="mx-2 bg-gray-400 rounded-lg w-[80%] h-auto">
+            <div class="container mx-auto mt-10">
+                <div class="wrapper bg-white rounded shadow w-full ">
+                    <div class="header flex justify-between border-b p-2">
+                        <span class="text-lg font-bold">
+                            2020 July
+                        </span>
+                        <div class="buttons">
+                            <button class="p-1">
+                                <svg width="1em" fill="gray" height="1em" viewBox="0 0 16 16"
+                                    class="bi bi-arrow-left-circle" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path fill-rule="evenodd"
+                                        d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z" />
+                                </svg>
+                            </button>
+                            <button class="p-1">
+                                <svg width="1em" fill="gray" height="1em" viewBox="0 0 16 16"
+                                    class="bi bi-arrow-right-circle" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path fill-rule="evenodd"
+                                        d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Monday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Mon</span>
+                                </th>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Tuesday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Tue</span>
+                                </th>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Wednesday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Wed</span>
+                                </th>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Thursday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Thu</span>
+                                </th>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Friday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Fri</span>
+                                </th>
+                                <th class="p-2 border-r h-10 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 xl:text-sm text-xs">
+                                    <span class="xl:block lg:block md:block sm:block hidden">Saturday</span>
+                                    <span class="xl:hidden lg:hidden md:hidden sm:hidden block">Sat</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center h-20">
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300 ">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">1</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
+                                            <div class="event bg-purple-400 text-white rounded p-1 text-sm mb-1">
+                                                <span class="event-name">
+                                                    Meeting
+                                                </span>
+                                                <span class="time">
+                                                    12:00~14:00
+                                                </span>
+                                            </div>
+                                            <div class="event bg-purple-400 text-white rounded p-1 text-sm mb-1">
+                                                <span class="event-name">
+                                                    Meeting
+                                                </span>
+                                                <span class="time">
+                                                    18:00~20:00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">2</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">3</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">4</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">6</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-hidden transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">7</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer">
+                                            <div class="event bg-blue-400 text-white rounded p-1 text-sm mb-1">
+                                                <span class="event-name">
+                                                    Shopping
+                                                </span>
+                                                <span class="time">
+                                                    12:00~14:00
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="text-center h-20">
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">9</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">10</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">12</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">13</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">14</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">15</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr class="text-center h-20">
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">16</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">17</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">18</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">19</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">20</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">21</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr class="text-center h-20">
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">23</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">24</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">25</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">26</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">27</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">28</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                           
+                            <tr class="text-center h-20">
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">30</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">31</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border bg-gray-100 p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">1</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border bg-gray-100 p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">2</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border bg-gray-100 p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">3</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+                                <td
+                                    class="border bg-gray-100 p-1 h-40 xl:w-40 lg:w-30 md:w-30 sm:w-20 w-10 overflow-auto transition cursor-pointer duration-500 ease hover:bg-gray-300">
+                                    <div
+                                        class="flex flex-col h-40 xl:w-40 lg:w-30 md:w-30 sm:w-full w-10 mx-auto overflow-hidden">
+                                        <div class="top h-5 w-full">
+                                            <span class="text-gray-500">4</span>
+                                        </div>
+                                        <div class="bottom flex-grow h-30 py-1 w-full cursor-pointer"></div>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+        </div> -->
+
+
+        <div id="calendar-container" class="w-full">
+            <div id="cal-buttons">
+                <div id="cal-date-nav-buttons">
+                    <button id="previous" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        mwlCalendarPreviousView [(viewDate)]="jouractu" [view]="view">Previous</button>
+                    <button id="today" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white" mwlCalendarToday
+                        [(viewDate)]="jouractu">Today</button>
+                    <button id="next" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white" mwlCalendarNextView
+                        [(viewDate)]="jouractu" [view]="view">Next</button>
+                </div>
+                <div id="cal-date-field" class="mx-8 text-lg font-bold"> {{jouractu | calendarDate: (view +
+                    'ViewTitle'):'en' }}</div>
+                <div id="cal-view-nav-buttons">
+                    <button class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Month)" mwlCalendarPreviousView [(viewDate)]="jouractu"
+                        [view]="view">
+                        Month
+                    </button>
+                    <button id="week" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Week)" 
+                        mwlCalendarToday 
+                        [(viewDate)]="jouractu"
+                       
+                        >Week</button>
+                    <button id="day" class="m-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Day)" 
+                        mwlCalendarNextView
+                         [(viewDate)]="jouractu"
+                        [view]="view">Day</button>
+                </div>
+            </div>
+            <span [ngSwitch]="view">
+                <mwl-calendar-month-view [viewDate]="jouractu" [events]="events"
+                    *ngSwitchCase="CalendarView.Month"></mwl-calendar-month-view>
+                <mwl-calendar-week-view [viewDate]="jouractu" [events]="events"
+                    *ngSwitchCase="CalendarView.Week"></mwl-calendar-week-view>
+                <mwl-calendar-day-view [viewDate]=" jouractu" [events]="events"
+                    *ngSwitchCase="CalendarView.Day"></mwl-calendar-day-view>
+            </span>
+        </div>
+
+
+    </div>
+</div>

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
-
+// import { PagesRoutingModule } from '../pages/pages-routing.module';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 
 @NgModule({
@@ -9,7 +10,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    LayoutRoutingModule,
+  ],
+  exports: [
+    NavbarComponent
+  ],
 })
 export class LayoutModule { }
+

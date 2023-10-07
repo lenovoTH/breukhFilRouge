@@ -1,0 +1,85 @@
+<!-- <p>listecour works!</p> -->
+
+<!-- <p>ajoutcour works!</p> -->
+
+<div class="my-8 flex justify-center items-center">
+    <div class="bg-blue-100 w-[80%] h-full p-2">
+
+        <div class="my-2 flex sm:flex-row flex-col">
+            <div class="flex flex-row mb-1 sm:mb-0">
+                <div class="relative">
+                    <select
+                        class="h-full rounded-r border-t sm:rounded-r-none sm:border-r-0 border-r border-b block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-l focus:border-r focus:bg-white focus:border-gray-500">
+                        <option disabled>Rechercher par</option>
+                        <option>etat</option>
+                    </select>
+                </div>
+            </div>
+            <div class="block relative">
+                <input placeholder="Search"
+                    class="appearance-none rounded-r rounded-l sm:rounded-l-none border border-gray-400 border-b block pl-8 pr-6 py-2 w-full bg-white text-sm placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" />
+            </div>
+            <button class="bg-blue-500 px-3 mx-4 rounded-lg text-lg text-white">
+                Rechercher
+            </button>
+        </div>
+        <div class="flex p-10 justify-between">
+
+            <div class="space-x-1 text-lg">
+                <button class="bg-blue-500 px-3 rounded-lg text-lg text-white" [routerLink]="['/page/rp/cour']">
+                    Ajouter
+                </button>
+            </div>
+        </div>
+        <div class="px-10 h-1/3">
+
+            <table class="min-w-full leading-normal">
+                <thead>
+                    <tr>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Professeur
+                        </th>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Module
+                        </th>
+
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Classe
+                        </th>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Heures
+                        </th>
+                        <th
+                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            Etat
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cour of tabcours">
+                        <td class="px-3 py-3">{{cour.module_prof_id.user_id.prenom +'
+                            '+ cour.module_prof_id.user_id.nom}}</td>
+                        <td class="px-3 py-3">{{cour.module_prof_id.module_id.libelle}}</td>
+                        <td class="px-3 py-3">{{cour.classe_ouverte_id.classe_ouverte_id.libelle}}</td>
+                        <td class="px-3 py-3">{{cour.nbre_heure}}</td>
+                        <td class="px-3 py-3">
+                            <span class="bg-red-300 rounded-lg" *ngIf="cour.etat === 0">Non terminé</span>
+                            <span class="bg-green-300 rounded-lg" *ngIf="cour.etat === 1">Terminé</span>
+                        </td>
+                        <td class="px-3 py-3">
+                            <button class="bg-blue-500 px-3 rounded-lg text-lg text-white"
+                                [routerLink]="['/page/rp/session']">
+                                Session
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

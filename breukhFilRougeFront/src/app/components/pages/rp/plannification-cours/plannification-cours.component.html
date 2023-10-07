@@ -1,0 +1,209 @@
+<!-- 
+<div class="flex justify-center items-center">
+    <div class="bg-gray-300 w-[80%] h-full p-2">
+        <div class="flex items-start justify-between p-4 rounded-t dark:border-blue-600">
+            <h5 class="text-black text-lg font-bold">
+                Plannification
+            </h5>
+        </div>
+        <hr>
+        <form action="">
+            <div class="">
+                <div class=" flex justify-between border-t  p-4 mb-6 group col-span-2">
+                </div>
+                <hr>
+                <div class="flex justify-between w-full">
+                    <div class="flex flex-col w-[35%]">
+                        <label for="">Classe</label>
+                        <select formControlName="marque" class="rounded-lg h-12">
+                            <option value="" disabled>Choisir une classe</option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col w-[20%]">
+                        <label for="">Presentiel</label>
+                        <input id="default-radio-1" type="radio" value="" name="default-radio"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    </div>
+                    <div class="flex flex-col w-[35%]">
+                        <label for="">Salle</label>
+                        <select formControlName="categorie" class="rounded-lg h-12">
+                            <option value="" disabled>Choisir une salle</option>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex justify-between w-full">
+                    <div class="flex flex-col w-[35%]">
+                        <label for="">Professeur</label>
+                        <select formControlName="marque" class="rounded-lg h-12">
+                            <option value="" disabled>Choisir un professeur</option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col w-[35%]">
+                        <label for="">Module</label>
+                        <select formControlName="categorie" class="rounded-lg h-12">
+                            <option value="" disabled>Choisir un module</option>
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="flex flex-row-reverse gap-4 border-t border-gray-200 rounded-b dark:border-gray-600 pt-5">
+            <button class="m-4 bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="button">
+                Annuler
+            </button>
+            <button class="m-4 bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                type="submit">
+                Enregistrer
+            </button>
+        </div>
+    </div>
+</div> -->
+
+<div class="my-8 flex justify-center items-center">
+    <div class="bg-blue-100 w-[80%] h-full p-2">
+        <form>
+            <div class="space-y-12">
+                <div class="border-b border-gray-900/10 pb-12">
+                    <h2 class="text-lg font-semibold leading-7 text-center text-gray-900">PLANNIFICATION SESSION COURS
+                    </h2>
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                            <label for="first-name" class="block text-lg font-bold leading-6 text-gray-900">Cour</label>
+                            <div class="mt-2">
+                                <select name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="" disabled>Choisir le cour</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Module</label>
+                            <div class="mt-2">
+                                <select name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="" disabled>Choisir un module</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Classe</label>
+                            <div class="mt-2">
+                                <input
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                            </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                            <label class="block text-lg font-bold leading-6 text-gray-900" for="">Presentiel</label>
+                            <input type="radio" class="h-6 w-6" [value]="">
+                        </div>
+
+                        <!-- <div class="sm:col-span-3">
+                            <label for="first-name"
+                                class="block text-lg font-bold leading-6 text-gray-900">Salle</label>
+                            <div class="mt-2">
+                                <select name=""
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="">
+                                    <option value="" disabled>Choisir une Salle </option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                        <div class="sm:col-span-3">
+                            <label for="country" class="block text-lg font-bold leading-6 text-gray-900">Heure de
+                                debut</label>
+                            <div class="mt-2">
+                                <select id="country" name="country" autocomplete="country-name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                    <option>Choisir</option>
+                                    <option>8h</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label for="country" class="block text-lg font-bold leading-6 text-gray-900">Heure de
+                                fin</label>
+                            <div class="mt-2">
+                                <select id="country" name="country" autocomplete="country-name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                    <option>Choisir</option>
+                                    <option>8h</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- <div class="sm:col-span-3">
+                            <label for="country"
+                                class="block text-lg font-bold leading-6 text-gray-900">Country</label>
+                            <div class="mt-2">
+                                <select id="country" name="country" autocomplete="country-name"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>Mexico</option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-span-full">
+                            <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street
+                                address</label>
+                            <div class="mt-2">
+                                <input type="text" name="street-address" id="street-address"
+                                    autocomplete="street-address"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="sm:col-span-2 sm:col-start-1">
+                            <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
+                            <div class="mt-2">
+                                <input type="text" name="city" id="city" autocomplete="address-level2"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="sm:col-span-2">
+                            <label for="region" class="block text-sm font-medium leading-6 text-gray-900">State /
+                                Province</label>
+                            <div class="mt-2">
+                                <input type="text" name="region" id="region" autocomplete="address-level1"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="sm:col-span-2">
+                            <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP /
+                                Postal code</label>
+                            <div class="mt-2">
+                                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code"
+                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                <button type="submit"
+                    class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            </div>
+        </form>
+        <div>
+            <div>

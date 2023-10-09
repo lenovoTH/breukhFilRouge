@@ -4,12 +4,14 @@ import { PlannificationCoursComponent } from './plannification-cours/plannificat
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CourComponent } from './cour/cour.component';
 import { ListecourComponent } from './listecour/listecour.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 const routes: Routes = [
   { path: 'cour', component: CourComponent },
-  { path: 'session', component: PlannificationCoursComponent },
+  { path: 'session/:id', component: PlannificationCoursComponent },
   { path: 'listecour', component: ListecourComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'inscription', component: InscriptionComponent },
 ];
 
 @NgModule({

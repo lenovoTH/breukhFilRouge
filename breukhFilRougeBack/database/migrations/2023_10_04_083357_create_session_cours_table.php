@@ -20,7 +20,8 @@ return new class extends Migration
             $table->time('heure_debut');
             $table->time('heure_fin');
             $table->integer('duree');
-            $table->integer('heure_restant');
+            $table->date('date');
+            $table->integer('heure_restant')->nullable();
             $table->boolean('etat_annulation')->default(0);
             $table->timestamps();
         });
@@ -35,3 +36,4 @@ return new class extends Migration
         Schema::dropIfExists('session_cours');
     }
 };
+

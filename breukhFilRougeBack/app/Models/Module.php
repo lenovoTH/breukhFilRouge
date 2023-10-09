@@ -16,3 +16,4 @@ class Module extends Model
     }
 
 }
+

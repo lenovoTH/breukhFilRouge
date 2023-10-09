@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CourService } from 'src/app/services/cour.service';
 
 @Component({
@@ -7,18 +9,17 @@ import { CourService } from 'src/app/services/cour.service';
   styleUrls: ['./listecour.component.css']
 })
 export class ListecourComponent {
-  constructor(private courservice: CourService) { }
+  constructor(public modalService: NgbModal, private courservice: CourService,private router: Router) { }
 
   ngOnInit() {
     this.getCours()
   }
-  
-  tabcours: any = []
 
+  tabcours: any = []
   getCours() {
     this.courservice.getCours().subscribe((value) => {
-      // console.log(value.data);
       this.tabcours = value.data
     })
   }
+
 }

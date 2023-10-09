@@ -7,8 +7,9 @@ import { PlannificationCoursComponent } from './plannification-cours/plannificat
 import { CourComponent } from './cour/cour.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListecourComponent } from './listecour/listecour.component';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { CalendarDateFormatter, CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { InscriptionComponent } from './inscription/inscription.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     DashboardComponent,
     PlannificationCoursComponent,
     CourComponent,
-    ListecourComponent
+    ListecourComponent,
+    InscriptionComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     FormsModule,
     // BrowserAnimationsModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+  ],
+  providers: [
+    // { provide: CalendarDateFormatter, useClass: CustomHeure }
   ]
 })
 export class RpModule { }

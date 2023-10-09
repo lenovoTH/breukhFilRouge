@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Salle;
 use App\Models\Classe;
 use App\Models\Module;
+use App\Models\Semestre;
 use App\Models\ModuleProf;
 use Illuminate\Http\Request;
-use App\Models\ClasseOuverte;
-use App\Http\Resources\ClasseOuResource;
-use App\Http\Resources\ProfRessource;
 use App\Models\AnneeScolaire;
-use App\Models\Semestre;
+use App\Models\ClasseOuverte;
+use App\Http\Resources\ProfRessource;
+use App\Http\Resources\ClasseOuResource;
 
 class ClasseController extends Controller
 {
@@ -49,6 +50,12 @@ class ClasseController extends Controller
     {
         $semestre = Semestre::all();
         return $semestre;
+    }
+
+    public function indexSalle()
+    {
+        $salle = Salle::all();
+        return $salle;
     }
 
     /**

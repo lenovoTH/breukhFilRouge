@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\SessionCour;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use eloquentFilter\QueryFilter\ModelFilters\Filterable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Cour extends Model
 {
@@ -32,5 +34,11 @@ class Cour extends Model
     {
         return $this->belongsTo(ModuleProf::class);
     }    
+
+    public function session_cours(): HasMany
+    {
+        return $this->hasMany(SessionCour::class);
+    }    
+    
 }
 

@@ -18,6 +18,7 @@ class CourResource extends JsonResource
     {
         return [
             // 'annee_scolaire_semestre_id' => AnneeSemResource::make($this->annee_scolaire_semestre),
+            'id' => $this->id,
             'classe_ouverte_id' => new ClasseOuResource($this->classe_ouverte),
             'module_prof_id' => new ModuleProfResource($this->module_prof),
             'nbre_heure' => $this->nbre_heure,

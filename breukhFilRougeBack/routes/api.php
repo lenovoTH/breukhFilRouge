@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourController;
 use App\Http\Controllers\ClasseController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,12 @@ use App\Http\Controllers\ClasseController;
 Route::middleware('auth:sanctum')->group(function () {
 });
 
-Route::apiResource('users', UserController::class);
+Route::post('import', [UserController::class, 'import']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
 
 Route::get('classes', [ClasseController::class, 'index']);
+Route::get('salles', [ClasseController::class, 'indexSalle']);
 Route::get('profs/{idModule}', [ClasseController::class, 'showProf']);
 Route::get('modules', [ClasseController::class, 'indexModule']);
 Route::get('annees', [ClasseController::class, 'indexAnnee']);
@@ -33,4 +35,5 @@ Route::get('semestres', [ClasseController::class, 'indexSemestre']);
 Route::post('cours', [CourController::class, 'store']);
 Route::get('cours', [CourController::class, 'index']);
 Route::get('filtre', [CourController::class, 'filtre']);
-
+Route::apiResource('sessioncour', SessionController::class);
+Route::get('courprof/{idprof}', [SessionController::class, 'getCoursDuProf']);

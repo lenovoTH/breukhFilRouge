@@ -43,7 +43,8 @@ class CourController extends Controller
         // return new ModuleProfResource($module_prof);
 
         $annesem = AnneeScolaireSemestre::where([
-            'annee_scolaire_id' => $id_annee,
+            // 'annee_scolaire_id' => $id_annee,
+            'annee_scolaire_id' => 1,
             'semestre_id' => $id_seme
         ])->first();
 

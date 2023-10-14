@@ -170,6 +170,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         eloquentFilter\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -187,6 +188,7 @@ return [
         // 'Example' => App\Facades\Example::class,
         'EloquentFilter' => eloquentFilter\Facade\EloquentFilter::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Permission' => Spatie\Permission\PermissionFacade::class,
     ])->toArray(),
 
 ];

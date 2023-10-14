@@ -44,8 +44,6 @@ export class DashboardComponent {
     // }
     // this.events.push(event1)
     this.getSessionCour()
-    // console.log(this.afficheSession());
-    // this.afficheSession()
   }
 
   eventsJour = false
@@ -69,7 +67,7 @@ export class DashboardComponent {
   tabsession: any = []
   getSessionCour() {
     this.sessioncour.getSession().subscribe((value) => {
-      this.tabsession = value.data
+      this.tabsession = value
       this.tabsession.forEach((element: any) => {
         const event1 = {
           title: 'Classe: ' + '  ' + element.cour_id.classe_ouverte_id.classe_ouverte_id.libelle
@@ -84,8 +82,6 @@ export class DashboardComponent {
       });
     })
   }
-
-
 
 }
 

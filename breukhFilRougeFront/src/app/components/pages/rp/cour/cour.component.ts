@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClassOu, Idlibelle, Prof } from 'src/app/models/model';
 import { CourService } from 'src/app/services/cour.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-cour',
@@ -11,7 +13,7 @@ import { CourService } from 'src/app/services/cour.service';
 export class CourComponent {
 
   myFormCour!: FormGroup
-  
+
   constructor(private courservice: CourService, private fb: FormBuilder) {
     this.myFormCour = this.fb.group({
       annee: ['', Validators.required],
@@ -69,6 +71,12 @@ export class CourComponent {
     // console.log(this.myFormCour.value);
     this.courservice.addCours(this.myFormCour.value).subscribe((value) => {
       console.log(value);
+      Swal.fire({
+        icon: 'success',
+        title: 'Cour ajouté avec succès',
+        showConfirmButton: false,
+        timer: 1500,
+      })
       this.myFormCour.reset()
     })
   }

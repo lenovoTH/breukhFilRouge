@@ -20,5 +20,10 @@ class ClasseOuverte extends Model
     {
         return $this->hasMany(Cour::class);
     }
+
+    public function filiere(): BelongsTo
+    {
+        return $this->belongsTo(Filiere::class);
+    }
     
 }

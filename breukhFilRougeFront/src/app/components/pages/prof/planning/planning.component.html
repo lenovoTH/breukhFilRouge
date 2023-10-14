@@ -1,0 +1,57 @@
+<div class="h-full my-8 flex justify-center align-center">
+    <div class="bg-blue-100 w-[90%] h-full p-2 flex">
+
+        <div class="bg-blue-400 rounded-lg w-[20%] h-auto">
+            <div class="">
+                <ul class="text-lg font-bold">
+                    <li class="text-center text-white"><i
+                            class="fa-solid fa-house mx-2 my-16 text-orange-400"></i>DASHBOARD</li>
+                    <li [routerLink]="['/page/rp/listecour']" class="text-center my-12 text-white"><i
+                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Plannification Cour</li>
+                    <li [routerLink]="['/page/rp/listeclasse']" class="text-center my-12 text-white"><i
+                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Liste des classes</li>
+                    <li class="text-center my-12 text-white"><i
+                            class="fa-solid fa-house mx-2 text-orange-400"></i>Etudiants</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="calendar-container" class="w-full">
+            <div id="cal-buttons" class="flex justify-around">
+                <div id="cal-date-nav-buttons">
+                    <button id="previous" class="m-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        mwlCalendarPreviousView [(viewDate)]="jouractu" [view]="view"
+                        [excludeDays]="[0,6]">Previous</button>
+                    <button id="today" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white" mwlCalendarToday
+                        [(viewDate)]="jouractu">Today</button>
+                    <button id="next" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white" mwlCalendarNextView
+                        [(viewDate)]="jouractu" [view]="view" [excludeDays]="[0,6]">Next</button>
+                </div>
+                <div id="cal-date-field" class="mx-8 text-lg font-bold"> {{jouractu | calendarDate: (view +
+                    'ViewTitle'):'fr' }}</div>
+                <div id="cal-view-nav-buttons">
+                    <button class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Month)" mwlCalendarPreviousView [(viewDate)]="jouractu"
+                        [view]="view">
+                        Month
+                    </button>
+                    <button id="week" class="mx-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Week)" mwlCalendarToday [(viewDate)]="jouractu">Week</button>
+                    <button id="day" class="m-4 bg-blue-500 px-3 rounded-lg text-lg text-white"
+                        (click)="setView(CalendarView.Day)" mwlCalendarNextView [(viewDate)]="jouractu"
+                        [view]="view">Day</button>
+                </div>
+            </div>
+            <span [ngSwitch]="view">
+                <mwl-calendar-month-view [viewDate]="jouractu" [events]="events" *ngSwitchCase="CalendarView.Month"
+                    locale="fr" [excludeDays]="[0,6]" (eventClicked)="$event"></mwl-calendar-month-view>
+                <mwl-calendar-week-view [viewDate]="jouractu" [events]="events" *ngSwitchCase="CalendarView.Week"
+                    locale="fr" (eventClicked)="$event" [excludeDays]="[0,6]" [dayStartHour]="8"
+                    [dayEndHour]="20"></mwl-calendar-week-view>
+                <mwl-calendar-day-view [viewDate]=" jouractu" [events]="events" *ngSwitchCase="CalendarView.Day"
+                    locale="fr" (eventClicked)="$event" [dayStartHour]="8" [dayEndHour]="20"></mwl-calendar-day-view>
+            </span>
+        </div>
+
+    </div>
+</div>

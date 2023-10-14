@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cour;
 use App\Models\User;
+use App\Models\ModuleProf;
 use App\Models\SessionCour;
 use Illuminate\Http\Request;
 use App\Http\Resources\SessionResource;
@@ -19,24 +21,33 @@ class SessionController extends Controller
         return SessionResource::collection($sessionCour);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-
-    // public function getCoursDuProf($profId)
-    // {
-    //     $professeur = User::with('module.module.cour')->find($profId);
-    //     return $professeur;
-    // }
+    public function getSessionsByProf($profId)
+    {
+        $moduleProfs = ModuleProf::where('user_id', $profId)->with('cours.session_cours')->get();
+        $sessions = collect();
+        foreach ($moduleProfs as $moduleProf) {
+            foreach ($moduleProf->cours as $cour) {
+                $sessions = $sessions->merge($cour->session_cours);
+            }
+        }
+        return SessionResource::collection($sessions);
+    }
 
     public function store(Request $request)
     {
         $idcour = $request->cour;
-        // $htotal = $idcour->heure;
+        $objcour = Cour::findOrFail($idcour);
+        $nbreh = $objcour->nbre_heure;
+        $hres = $objcour->heure_restant;
         $duree = $request->duree;
-        // $hrestant = $htotal - $duree;
-        $salle = $request->salle;
+        $hres += $duree;
+        $objcour->update(['heure_restant' => $hres]);
+        return $objcour;
 
+        if ($hres == $nbreh) {
+            $objcour->update(['etat' => 1]);
+            return response()->json("les heures pour ce cour sont terminés");
+        }
         if ($request->h_fin < $request->h_debut) {
             return "l'heure de fin n'est pas approprié";
         }
@@ -54,19 +65,19 @@ class SessionController extends Controller
                 return "le prof n'est pas disponible";
             }
         }
-        $compareEffectif = SessionCour::where('salle_id', $request->salle);
-        if ($request->salle) {
-            # code...
-        }
+
+        // $compareEffectif = SessionCour::where('salle_id', $request->salle);
+        // if ($request->salle) {
+        //     # code...
+        // }
 
         $session = SessionCour::create([
             'cour_id' => $request->cour,
-            'salle_id' => $salle,
+            'salle_id' => $request->salle,
             'heure_debut' => $request->h_debut,
             'heure_fin' => $request->h_fin,
             'date' => $request->date,
-            'duree' => $duree,
-            // 'heure_restant' => $hrestant,
+            'duree' => $request->duree,
         ]);
         return $session;
     }

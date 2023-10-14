@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cour;
+use App\Models\User;
 use App\Models\ModuleProf;
 use Illuminate\Http\Request;
 use App\Models\ClasseOuverte;
+use App\Http\Resources\CourResource;
 use App\Models\AnneeScolaireSemestre;
 use App\Http\Resources\ModuleResource;
 use App\Http\Resources\AnneeSemResource;
-use App\Http\Resources\CourResource;
 use App\Http\Resources\ModuleProfResource;
 
 class CourController extends Controller
@@ -19,13 +20,35 @@ class CourController extends Controller
      */
     public function index()
     {
-        $cours = Cour::all();
+        $cours = Cour::filter()->get();
         return CourResource::collection($cours);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // public function filtrr()
+    // {
+    //     $search = Cour::find('etat', 0);
+    //     return $search;
+    // }
+
+    // public function getModulesByProf($profId)
+    // {
+    //     $prof = User::find($profId);
+    //     if (!$prof || $prof->role != 'prof') {
+    //         return response()->json('message', "ce n'est pas un prof");
+    //     }
+    //     $modules = $prof->module;
+    //     return response()->json($modules);
+    // }
+
+    public function getCoursByProf($profId)
+    {
+        $moduleProfs = ModuleProf::where('user_id', $profId)->with('cours')->get();
+        $cours = collect();
+        foreach ($moduleProfs as $moduleProf) {
+            $cours = $cours->merge($moduleProf->cours);
+        }
+        return CourResource::collection($cours);
+    }
 
     public function store(Request $request)
     {
@@ -78,6 +101,7 @@ class CourController extends Controller
     /**
      * Update the specified resource in storage.
      */
+
     public function update(Request $request, Cour $cour)
     {
         //
@@ -86,8 +110,10 @@ class CourController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
     public function destroy(Cour $cour)
     {
         //
     }
+    
 }

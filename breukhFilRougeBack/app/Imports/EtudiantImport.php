@@ -17,9 +17,14 @@ class EtudiantImport implements ToModel
         // return new User([
         //     //
         // ]);
+
         return new User([
-            'name'  => $row['name'],
-            'email' => $row['email'],
+            // 'id'  => $row[0],
+            'prenom'  => $row[0],
+            'nom'  => $row[1],
+            'login' => $row[2],
+            'password' => $row[3],
+            'role' => "etudiant",
         ]);
     }
 }

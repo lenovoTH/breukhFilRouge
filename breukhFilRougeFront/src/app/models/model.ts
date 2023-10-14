@@ -15,6 +15,9 @@ export interface AllProduct<T> {
 export interface ClassOu {
     id: number
     classe_ouverte_id: ClasseOuverteId
+    effectif: number
+    filiere_id: Idlibelle
+    niveau: string
 }
 
 export interface ClasseOuverteId {
@@ -53,3 +56,9 @@ export interface Session {
     duree: Time
 }
 
+export const Roles = {
+    Rp: 'RP',
+    Attache: 'attache',
+    Prof: 'prof',
+    Etudiant: 'etudiant',
+};

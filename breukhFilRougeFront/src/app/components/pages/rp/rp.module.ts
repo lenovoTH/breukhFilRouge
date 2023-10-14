@@ -10,6 +10,8 @@ import { ListecourComponent } from './listecour/listecour.component';
 import { CalendarDateFormatter, CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ListeClasseComponent } from './liste-classe/liste-classe.component';
+import { RouterModule } from '@angular/router';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -18,7 +20,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     PlannificationCoursComponent,
     CourComponent,
     ListecourComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ListeClasseComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     // BrowserAnimationsModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
   ],
+  exports: [RouterModule],
   providers: [
     // { provide: CalendarDateFormatter, useClass: CustomHeure }
   ]

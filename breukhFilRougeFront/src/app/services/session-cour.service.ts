@@ -11,7 +11,6 @@ export class SessionCourService {
 
   constructor(private http: HttpClient) { }
 
-
   getSalles(): Observable<Salle[]> {
     return this.http.get<Salle[]>(`${environment.uri}salles`)
   }

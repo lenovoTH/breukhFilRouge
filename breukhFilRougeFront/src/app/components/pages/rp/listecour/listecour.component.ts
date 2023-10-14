@@ -9,7 +9,7 @@ import { CourService } from 'src/app/services/cour.service';
   styleUrls: ['./listecour.component.css']
 })
 export class ListecourComponent {
-  constructor(public modalService: NgbModal, private courservice: CourService,private router: Router) { }
+  constructor(public modalService: NgbModal, private courservice: CourService, private router: Router) { }
 
   ngOnInit() {
     this.getCours()
@@ -22,4 +22,15 @@ export class ListecourComponent {
     })
   }
 
+  attr!: string
+  search!: string
+  // tabsearch: any
+  filtrage() {
+    console.log(this.search);
+    console.log(this.attr);
+    this.courservice.filter(this.attr, this.search).subscribe((value) => {
+      this.tabcours = value.data
+      console.log(value.data);
+    })
+  }
 }

@@ -1,5 +1,3 @@
-<!-- <p>dashboard works!</p> -->
-
 <div class="h-full my-8 flex justify-center align-center">
     <div class="bg-blue-100 w-[90%] h-full p-2 flex">
         <div class="bg-blue-400 rounded-lg w-[20%] h-auto">
@@ -9,14 +7,12 @@
                             class="fa-solid fa-house mx-2 my-16 text-orange-400"></i>DASHBOARD</li>
                     <li [routerLink]="['/page/rp/listecour']" class="text-center my-12 text-white"><i
                             class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Plannification Cour</li>
-                    <li [routerLink]="['/page/rp/session']" class="text-center my-12 text-white"><i
-                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Plannification Session</li>
-
-                    <li [routerLink]="['/page/rp/inscription']" class="text-center my-12 text-white"><i
+                    <li [routerLink]="['/page/rp/listeclasse']" class="text-center my-12 text-white"><i
+                            class="fa-regular fa-calendar-days mx-2 text-orange-400"></i>Liste des classes</li>
+                    <li class="text-center my-12 text-white"><i
                             class="fa-solid fa-house mx-2 text-orange-400"></i>Etudiants</li>
                 </ul>
             </div>
-
         </div>
 
         <div id="calendar-container" class="w-full">
@@ -50,9 +46,9 @@
                     locale="fr" [excludeDays]="[0,6]" (eventClicked)="$event"></mwl-calendar-month-view>
                 <mwl-calendar-week-view [viewDate]="jouractu" [events]="events" *ngSwitchCase="CalendarView.Week"
                     locale="fr" (eventClicked)="$event" [excludeDays]="[0,6]" [dayStartHour]="8"
-                    [dayEndHour]="16"></mwl-calendar-week-view>
+                    [dayEndHour]="20"></mwl-calendar-week-view>
                 <mwl-calendar-day-view [viewDate]=" jouractu" [events]="events" *ngSwitchCase="CalendarView.Day"
-                    locale="fr" (eventClicked)="$event" [dayStartHour]="8" [dayEndHour]="16"></mwl-calendar-day-view>
+                    locale="fr" (eventClicked)="$event" [dayStartHour]="8" [dayEndHour]="20"></mwl-calendar-day-view>
             </span>
         </div>
 

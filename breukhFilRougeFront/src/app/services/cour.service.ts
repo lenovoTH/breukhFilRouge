@@ -44,6 +44,10 @@ export class CourService {
   //   return this.http.get<any>(`${environment.uri}cours?${attribut}=${valeur}`)
   // }
 
+  filter(attribut: string, valeur: string): Observable<any> {
+    return this.http.get<any>(`${environment.uri}cours?${attribut}=${valeur}`)
+  }
+
 
 }
 
